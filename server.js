@@ -11,6 +11,8 @@ require("./lib/models.js");
 require("./lib/views.js");
 require("./lib/test.js");
 
+let bodyParser = require('body-parser')
+app.use(bodyParser({limit: '20mb'}));
 app.listen(env["PORT"], () => {
   console.log(`Server Started at Port ${env["PORT"]}`);
   require(pwd + "/config/cron");
